@@ -37,13 +37,13 @@ public class VisitorController {
     }
 
     @PostMapping(value = "/add")
-    public ResponseEntity<Visitor> addVisitor(@RequestParam Visitor visitor){
+    public ResponseEntity<Visitor> addVisitor(@RequestBody Visitor visitor){
         Visitor visitor1 =visitorService.addVisitor(visitor);
         return new ResponseEntity<>(visitor1, HttpStatus.CREATED);
     }
 
     @PutMapping(value = "/update")
-    public ResponseEntity<Visitor> updateVisitor(@RequestParam Visitor visitor){
+    public ResponseEntity<Visitor> updateVisitor(@RequestBody Visitor visitor){
         Visitor visitor1= visitorService.updateVisitor(visitor);
         return new ResponseEntity<>(visitor1,HttpStatus.OK);
     }
